@@ -1,5 +1,5 @@
 <template>
-  	<div class="gallery-page">
+	<div class="menu-page">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
 		</div>
@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             captionSectionObj: {
-                'captionSection': 'About',
+                'captionSection': 'Menu',
                 'subcaptionText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
             }
         }
@@ -21,11 +21,11 @@ export default {
 
     components: {
         CaptionSection
-	},
-	
-	mounted() {
+    },
+
+    mounted() {
         document.body.classList.remove('home-page');
-	}
+    }
   
 }
 

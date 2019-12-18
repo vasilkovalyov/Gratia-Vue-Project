@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             captionSectionObj: {
-                'captionSection': 'About',
+                'captionSection': 'Contact',
                 'subcaptionText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
             }
         }
