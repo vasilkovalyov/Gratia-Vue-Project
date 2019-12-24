@@ -20,9 +20,7 @@ const routes = [
 		component: () => import('../views/Contact.vue')
   	},
   	{
-		path: '/gallery',
-		name: 'gallery',
-		component: () => import('../views/Gallery.vue')
+		path: '/gallery', component: () => import('../views/Gallery.vue')
   	},
   	{
 		path: '/menu',
@@ -32,7 +30,7 @@ const routes = [
   	{
 		path: '/category-menu/:category/',
 		name: 'category-menu',
-		component: () => import('../views/CategoryInner.vue'),
+		component: () => import('../views/DishesList.vue'),
 	},
 	{
 		path: '*',

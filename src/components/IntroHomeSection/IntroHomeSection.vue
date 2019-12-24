@@ -26,7 +26,6 @@
     .intro-holder-section {
         background-color: $dark-blue;
         min-height: 100vh;
-        height: 100vh;
         padding-top: 140px;
     }
     

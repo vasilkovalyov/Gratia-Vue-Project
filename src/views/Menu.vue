@@ -2,14 +2,22 @@
 	<section class="section-menu">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
-            <CategoryList></CategoryList>
+            <div class="menu-card-category-list">
+                <div class="row">
+                    <div class="col" v-for="(card,key) in getCategoryList" :key="key">
+                        <CardCategory :card="card"></CardCategory>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</section>
 </template>
 <script>
 
 import CaptionSection from '@/components/CaptionSection'
-import CategoryList from '@/components/Menu/CategoryList'
+import CardCategory from '@/components/Menu/CardCategory'
+
+import { mapGetters } from 'vuex';
 
 export default {
     data() {
@@ -21,15 +29,18 @@ export default {
         }
     },
 
-    components: {
-        CaptionSection,
-        CategoryList
-    },
-
     mounted() {
         document.body.classList.remove('home-page');
+    },
+
+    components: {
+        CaptionSection,
+        CardCategory
+    },
+
+    computed: {
+        ...mapGetters(['getCategoryList'])
     }
-  
 }
 
 </script>
@@ -39,6 +50,36 @@ export default {
     .caption-section {
         margin-bottom: 87px;
     }
+    
+    .menu-card-category-list {
+        .row {
+            @include media(">=phone") {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -10px;
+            }
 
+            @include media(">=1440px") {
+                margin: 0 -30px;
+            }
+        }
+
+        .col {
+            @include media(">=phone") {
+                display: flex;
+                width: 50%;
+                padding: 0 10px;
+            }
+
+            @include media(">=tablet") {
+                width: 33.33%;
+            }
+
+            @include media(">=1440px") {
+                width: 33.33%;
+                padding: 0 30px;
+            }
+        }
+    }
     
 </style>

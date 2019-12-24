@@ -1,5 +1,5 @@
 <template>
-	<div class="menu-card-category">
+	<div class="card-dish">
         <div class="image-holder" :style="{ backgroundImage: 'url(/images/' + card.image + ')' }"></div>
         <div class="card-body">
             <h3>{{card.caption}}</h3>
@@ -7,10 +7,11 @@
                 <p>{{card.description}}</p>
             </div>
         </div>
-        <router-link :to="'/category-menu/'+card.categoryName" tag='a' class="link"></router-link>
+        <router-link :to="'/dish/'+card.id" tag='a' class="link"></router-link>
     </div>
 </template>
 <script>
+
 
 export default {
     props: ["card"]
@@ -20,7 +21,7 @@ export default {
 <style lang="scss">
     @import "@/assets/scss/style.scss";
 
-    .menu-card-category {
+    .card-dish {
         position: relative;
         background-color: $white;
         width: 100%;

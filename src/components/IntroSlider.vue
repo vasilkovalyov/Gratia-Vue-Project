@@ -3,7 +3,7 @@
         <slick ref="slick" :options="slickOptions">
             <div class="slide-item" v-for="(item,i) in imagesArray" :key=i>
                 <div class='image-holder'>
-                    <img :src="('images/')+item" alt="img slide" >
+                    <img :src="('images/')+item" alt="img slide">
                 </div>
             </div>
         </slick>
@@ -81,6 +81,16 @@
 
 .intro-slider {
     padding: 0 100px;
+
+    @include media(">=widescreen") {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    @include media(">=1440px") {
+        max-width: 100%;
+    }
 }
 
 .slide-item {
@@ -100,6 +110,14 @@
     font-weight: $bold;
     margin: 0;
     padding: 0;
+
+    @include media(">=widescreen") {
+        bottom: 0;
+    }
+
+    @include media(">=1440px") {
+        bottom: -70px;
+    }
     
     li {
         position: relative;
@@ -121,7 +139,13 @@
         }
 
         &:not(:last-child) {
-            margin-bottom: 50px;
+            @include media(">=widescreen") {
+                margin-bottom: 20px;
+            }
+
+            @include media(">=1440px") {
+                margin-bottom: 50px;
+            }
         }
 
         &.slick-active {
