@@ -2,13 +2,12 @@
 	<div class="menu-card-category">
         <div class="image-holder" :style="{ backgroundImage: 'url(images/' + objProps.image + ')' }"></div>
         <div class="card-body">
-            <h3>
-                <a href="#">{{objProps.link}}</a>
-            </h3>
+            <h3>{{objProps.caption}}</h3>
             <div class="description">
                 <p>{{objProps.description}}</p>
             </div>
         </div>
+        <router-link :to="'/category-menu/'+objProps.categoryName" tag='a' class="link"></router-link>
     </div>
 </template>
 <script>
@@ -28,10 +27,16 @@ export default {
     @import "@/assets/scss/style.scss";
 
     .menu-card-category {
+        position: relative;
         background-color: $white;
         width: 100%;
         margin-bottom: 40px;
         box-shadow: 0px 0px 20px 0px #c7c7d6;
+        @include animate(transform);
+
+        &:hover {
+            transform: scale(1.05);
+        }
 
         .image-holder {
             background-size: cover;
@@ -43,11 +48,10 @@ export default {
             }
 
             @include media(">=tablet") {
-                height: 20vw;
+                height: 14vw;
             }
 
-            @include media(">=1800px") {
-                height: 386px;
+            @include media(">=desktop") {
             }
         }
 
@@ -58,10 +62,6 @@ export default {
             @include media(">=desktop") {
                 padding: 35px;
             }
-
-            @include media(">=1440px") {
-                 padding: 70px 35px;
-            }
         }
 
         h3 {
@@ -71,13 +71,7 @@ export default {
             line-height: 1;
 
             @include media(">=desktop") {
-                font-size: 26px;
-            }
-            
-
-            @include media(">=1440px") {
-                font-size: 48px;
-                margin-bottom: 55px;
+                font-size: 30px;
             }
             
             a {
@@ -102,6 +96,15 @@ export default {
         p {
             font-size: inherit;
             margin-bottom: 5px;
+        }
+
+        .link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
     }
 </style>

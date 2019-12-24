@@ -2,14 +2,14 @@
 	<section class="section-menu">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
-            <MenuCardCategoryList></MenuCardCategoryList>
+            <CategoryList></CategoryList>
 		</div>
 	</section>
 </template>
 <script>
 
 import CaptionSection from '@/components/CaptionSection'
-import MenuCardCategoryList from '@/components/MenuCategory/MenuCardCategoryList'
+import CategoryList from '@/components/Menu/CategoryList'
 
 export default {
     data() {
@@ -23,7 +23,7 @@ export default {
 
     components: {
         CaptionSection,
-        MenuCardCategoryList
+        CategoryList
     },
 
     mounted() {

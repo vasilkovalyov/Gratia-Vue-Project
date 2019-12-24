@@ -93,6 +93,10 @@ export default {
 		}
 
 		li {
+			&.router-link-active {
+				color: $primary;
+			}
+
 			&:not(:first-child) {
 				margin-left: 76px;
 			}

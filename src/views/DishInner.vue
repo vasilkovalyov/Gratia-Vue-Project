@@ -1,5 +1,5 @@
 <template>
-  	<section class="section-gallery">
+	<section class="dish-inner">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
 		</div>
@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             captionSectionObj: {
-                'captionSection': 'Gallery',
+                'captionSection': 'Dish Inner Page',
                 'subcaptionText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
             }
         }
@@ -24,10 +24,13 @@ export default {
     },
 
     mounted() {
-        console.log(this.$router.currentRoute);
         document.body.classList.remove('home-page');
     }
-  
 }
 
 </script>
+<style lang="scss">
+    @import "@/assets/scss/style.scss";
+
+    
+</style>

@@ -53,7 +53,7 @@
     color: transparent;
     background: transparent;
     border: 0;
-    border-top: 1px solid #1f2736;
+    border-top: 1px solid $white;
     outline: none;
     width: 50px;
     height: 50px;
@@ -67,13 +67,13 @@
     }
 
     &.slick-prev {
-        border-left: 1px solid #1f2736;
+        border-left: 1px solid $white;
         transform: translateY(-50%) rotate(-45deg);
         left: 0;
     }
 
     &.slick-next {
-        border-left: 1px solid #1f2736;
+        border-left: 1px solid $white;
         transform: translateY(-50%) rotate(135deg);
         right: 0;
     }
@@ -92,7 +92,7 @@
 .slick-dots {
     position: absolute;
     left: -65px;
-    bottom: 100px;
+    bottom: -70px;
     color: $white;
     font-family: $base-font-serif;
     font-style: normal;
