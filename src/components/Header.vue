@@ -2,7 +2,7 @@
 	<header id="header" class="header">
     	<div class="container">
 			<router-link to='/' tag='a' class="navbar-brand">
-				<img src="images/logo-01.png" alt="#">
+				<img :src="(`/images/${logoName}`)" alt="#">
 				<span>Gratia</span>
 			</router-link>
       		<nav id="nav">
@@ -18,6 +18,7 @@
 export default {
   	data() {
 		return {
+			logoName: 'logo-01.png',
 			navigation: [
 				{
 					path: '/about',
