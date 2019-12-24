@@ -47,6 +47,10 @@ export default {
 <style scoped lang="scss">
     @import "@/assets/scss/style.scss";
 
+    #footer {
+        background: $base-background-footer;
+    }
+
     .footer {
         text-align: center;
 
@@ -102,6 +106,18 @@ export default {
         .copyright {
             display: block;
             margin-bottom: 64px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 1px;
+                background-color: $gray-400;
+            }
         }
     }
 </style>

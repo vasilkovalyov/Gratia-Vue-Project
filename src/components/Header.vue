@@ -45,7 +45,7 @@ export default {
 	@import "@/assets/scss/style.scss";
 	  
 	.header {
-		padding: 63px 0;
+		padding: 63px 0 35px;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -94,7 +94,7 @@ export default {
 
 		li {
 			&:not(:first-child) {
-				margin-left: 60px;
+				margin-left: 76px;
 			}
 		}
 

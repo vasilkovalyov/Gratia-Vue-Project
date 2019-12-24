@@ -20,6 +20,9 @@ $media-expressions: (
 // ligatured operators ≥ ≤
 
 @import 'vendors/include-media';
+@import 'vendors/fonts';
+@import 'vendors/icons';
+
 
 @import 'base/variables';
 @import 'base/functions';
@@ -28,9 +31,8 @@ $media-expressions: (
 @import 'base/reset';
 @import 'base/typography';
 
+@import 'vendors/slick';
 
-@import 'vendors/fonts';
-@import 'vendors/icons';
 
 
 @import 'layout/header';

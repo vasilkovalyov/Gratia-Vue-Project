@@ -1,9 +1,9 @@
 <template>
-  	<div class="gallery-page">
+  	<section class="section-gallery">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
 		</div>
-	</div>
+	</section>
 </template>
 <script>
 

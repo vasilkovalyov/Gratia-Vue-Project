@@ -1,13 +1,15 @@
 <template>
-	<div class="menu-page">
+	<section class="section-menu">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
+            <MenuCardCategoryList></MenuCardCategoryList>
 		</div>
-	</div>
+	</section>
 </template>
 <script>
 
 import CaptionSection from '@/components/CaptionSection'
+import MenuCardCategoryList from '@/components/MenuCategory/MenuCardCategoryList'
 
 export default {
     data() {
@@ -20,7 +22,8 @@ export default {
     },
 
     components: {
-        CaptionSection
+        CaptionSection,
+        MenuCardCategoryList
     },
 
     mounted() {
@@ -30,3 +33,12 @@ export default {
 }
 
 </script>
+<style lang="scss">
+    @import "@/assets/scss/style.scss";
+
+    .caption-section {
+        margin-bottom: 87px;
+    }
+
+    
+</style>
