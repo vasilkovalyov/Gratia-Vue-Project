@@ -7,7 +7,7 @@
                 <p>{{card.description}}</p>
             </div>
         </div>
-        <router-link :to="'/dish/'+card.id" tag='a' class="link"></router-link>
+        <router-link :to="'/dish/'+card.categoryName+'/'+card.id" tag='a' class="link"></router-link>
     </div>
 </template>
 <script>

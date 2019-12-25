@@ -105,3 +105,18 @@
         color: $orange;
     }
 }
+
+.btn-back {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 16px;
+    outline: none;
+
+    @include animate(color);
+
+    &:hover {
+        color: $primary;
+        cursor: pointer;
+    }
+}

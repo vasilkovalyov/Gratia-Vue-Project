@@ -1,13 +1,14 @@
 <template>
 	<section class="section-dishes">
 		<div class="container">
+            <button class="btn-back" @click="goBackToCategories">&#8592; Back to categories</button>
             <div class="caption-holder">
 			    <h1>{{getSelectedCategoryName}}</h1>
             </div>
             <div class="dishes-list">
                 <div class="row">
                     <div class="col" v-for="(card,key) in getSelectedCategoryProducts" :key="key">
-                        <CardCategory :card="card"></CardCategory>
+                        <CardDish :card="card"></CardDish>
                     </div>
                 </div>
             </div>
@@ -17,7 +18,7 @@
 <script>
 
 import CaptionSection from '@/components/CaptionSection'
-import CardCategory from '@/components/Menu/CardCategory'
+import CardDish from '@/components/Menu/CardDish'
 
 import { mapActions, mapGetters } from 'vuex'
 
@@ -39,11 +40,14 @@ export default {
 
     components: {
         CaptionSection,
-        CardCategory
+        CardDish
     },
 
     methods: {
-        ...mapActions(["chooseCategory"])
+        ...mapActions(["chooseCategory"]),
+        goBackToCategories() {
+            this.$router.push('/menu');
+        }
     },
 
     computed: {
@@ -58,11 +62,20 @@ export default {
     .section-dishes {
         .caption-holder {
             text-align: center;
+            margin-bottom: 40px;
+
+            @include media(">=1440px") {
+                margin-bottom: 80px;
+            }
         }
 
         h1 {
             color: $dark-blue;
             text-transform: capitalize;
+
+            @include media(">=1440px") {
+                font-size: 48px;
+            }
         }
     }
 

@@ -33,6 +33,11 @@ const routes = [
 		component: () => import('../views/DishesList.vue'),
 	},
 	{
+		path: '/dish/:categoryName/:id',
+		name: 'dish',
+		component: () => import('../views/DishInner.vue'),
+	},
+	{
 		path: '*',
 		name: 'not found',
 		component: () => import('../views/NotFound.vue')
