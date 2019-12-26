@@ -5,10 +5,17 @@
             <div class="caption-holder">
 			    <h1>{{getSelectedCategoryName}}</h1>
             </div>
-            <div class="dishes-list">
-                <div class="row">
-                    <div class="col" v-for="(card,key) in getSelectedCategoryProducts" :key="key">
-                        <CardDish :card="card"></CardDish>
+            <div v-if="isEmpty == 0">
+                <div class="empty-category">
+                    <h1>{{sorryMsg}}</h1>
+                </div>
+            </div>
+            <div v-else>
+                <div class="dishes-list">
+                    <div class="row">
+                        <div class="col" v-for="(card,key) in getSelectedCategoryProducts" :key="key">
+                            <CardDish :card="card"></CardDish>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,6 +33,7 @@ export default {
     data() {
         return {
             category: this.$router.currentRoute.params.category,
+            sorryMsg: 'Sorry, category is empty',
             captionSectionObj: {
                 'captionSection': 'Category Inner Page',
                 'subcaptionText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
@@ -33,7 +41,7 @@ export default {
         }
     },
     
-    mounted() {
+    created() {
         this.chooseCategory(this.$route.params.category);
     },
 
@@ -51,6 +59,9 @@ export default {
 
     computed: {
         ...mapGetters(['getSelectedCategoryProducts', 'getSelectedCategoryName']),
+        isEmpty() {
+            return this.getSelectedCategoryProducts.length;
+        }
     }
 }
 
@@ -76,6 +87,10 @@ export default {
                 font-size: 48px;
             }
         }
+    }
+
+    .empty-category {
+        text-align: center;
     }
 
     .dishes-list {

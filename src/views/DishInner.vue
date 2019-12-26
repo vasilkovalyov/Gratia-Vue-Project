@@ -24,7 +24,7 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-    mounted() {
+    created() {
         const routeObject = this.$route.params
         this.chooseProductCategoryById({category: routeObject.categoryName, id: routeObject.id});
     },
@@ -39,7 +39,7 @@ export default {
     computed: {
         ...mapGetters(["getChooseProduct"]),
         getCategoryName() {
-            return this.getChooseProduct.categoryName;
+            return this.getChooseProduct.categoryName.split('-').join(' ');
         }
     }
 }
@@ -56,6 +56,10 @@ export default {
                 text-align: center;
                 margin-bottom: 60px;
             }
+        }
+
+        .caption-holder {
+            text-transform: capitalize;
         }
 
         h1,
