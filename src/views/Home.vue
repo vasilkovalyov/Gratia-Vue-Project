@@ -19,13 +19,6 @@ export default {
 		PerfectionSection,
 		IntroHomeSection,
 		DetailsSection
-		
-	},
-	
-	mounted() {
-		document.body.className = '';
-        document.body.classList.add('home-page');
 	}
-
 }
 </script>

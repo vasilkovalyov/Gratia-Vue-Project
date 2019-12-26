@@ -15,17 +15,8 @@
     }
 }
 
-.home-page {
-    #main {
-        padding-top: 0;
-    }
-}
-
 #main {
-    padding-top: 140px;
-
     @include media('>=desktop') {
-        padding-top: 160px;
         min-height: calc(100vh - 288px);
     }
 }
@@ -33,7 +24,6 @@
 .not-found-page {
     min-height: calc(100vh - 576px);
     display: flex;
-
     .container {
         display: flex;
         align-items: center;
@@ -45,7 +35,6 @@
     text-align: center;
     padding: 50px 0;
     margin-bottom: 50px;
-    
     h1 {
         text-transform: uppercase;
         color: $dark-blue-200;
@@ -112,9 +101,7 @@
     color: inherit;
     font-size: 16px;
     outline: none;
-
     @include animate(color);
-
     &:hover {
         color: $primary;
         cursor: pointer;

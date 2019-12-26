@@ -1,55 +1,58 @@
 <template>
 	<div class="intro-slider">
-        <slick ref="slick" :options="slickOptions">
-            <div class="slide-item" v-for="(item,i) in imagesArray" :key=i>
-                <div class='image-holder'>
-                    <img :src="('images/')+item" alt="img slide">
+        <swiper :options="swiperOptions">
+            <swiper-slide v-for="(item,i) in imagesArray" :key=i>
+                <div class="slide-item" >
+                    <div class='image-holder'>
+                        <img :src="('images/')+item" alt="img slide">
+                    </div>
                 </div>
-            </div>
-        </slick>
+            </swiper-slide>
+        </swiper>
+        <ul class="swiper-pagination"  slot="pagination"></ul>
+        <div class="arrow-swiper arrow-swiper-prev" slot="button-prev"></div>
+        <div class="arrow-swiper arrow-swiper-next" slot="button-next"></div>
     </div>
 </template>
 <script>
-    import Slick from 'vue-slick';
-    import jQuery from "jquery";
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
     export default {
         props: ['imagesArray'],
         data() {
             return {
-                slickOptions: {
-                    slidesToShow: 1,
-                    infinite: true,
-                    accessibility: true,
-                    adaptiveHeight: true,
-                    dots: true,
-                    draggable: true,
-                    edgeFriction: 0.30,
-                    swipe: true,
-                    prevArrow: this.navigationPrev,
-                    nextArrow: this.navigationNext,
+                swiperOptions: {
+                    init: true,
+                    uniqueNavElements: true,
+                    slidesPerView: 1,
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                        clickable: true,
+                        renderBullet(index, className) {
+                            return `<li class="${className} swiper-pagination-bullet-custom">0${index + 1}</li>`
+                        }
+                    },
+                    navigation: {
+                        nextEl: '.arrow-swiper-next',
+                        prevEl: '.arrow-swiper-prev',
+                    },
                 }
             }
         },
-        components: { Slick },
-        methods: {
-            next() {
-                this.$refs.slick.next();
-                
-            },
-            prev() {
-                this.$refs.slick.prev()
-            },
-            reInit() {
-                this.$refs.slick.reSlick()
-            }
-        }
+
+        components: {
+            swiper,
+            swiperSlide
+        },
     }
+
 </script>
 <style lang="scss" >
 @import "../assets/scss/style.scss";
 
-.slick-arrow {
+.arrow-swiper {
     color: transparent;
     background: transparent;
     border: 0;
@@ -66,13 +69,13 @@
         cursor: pointer;
     }
 
-    &.slick-prev {
+    &.arrow-swiper-prev {
         border-left: 1px solid $white;
         transform: translateY(-50%) rotate(-45deg);
         left: 0;
     }
 
-    &.slick-next {
+    &.arrow-swiper-next {
         border-left: 1px solid $white;
         transform: translateY(-50%) rotate(135deg);
         right: 0;
@@ -81,6 +84,7 @@
 
 .intro-slider {
     padding: 0 100px;
+    position: relative;
 
     @include media(">=widescreen") {
         max-width: 900px;
@@ -93,13 +97,13 @@
     }
 }
 
-.slide-item {
+.swiper-slide {
     .image-holder {
         text-align: center;
     }
 }
 
-.slick-dots {
+.swiper-pagination {
     position: absolute;
     left: -65px;
     bottom: -70px;
@@ -110,6 +114,7 @@
     font-weight: $bold;
     margin: 0;
     padding: 0;
+    list-style-type: none;
 
     @include media(">=widescreen") {
         bottom: 0;
@@ -121,12 +126,11 @@
     
     li {
         position: relative;
-        list-style-type: decimal-leading-zero;
 
         &:after {
             content: '';
             position: absolute;
-            left: -30px;
+            left: -3px;
             bottom: -11px;
             width: 0;
             height: 2px;
@@ -148,7 +152,7 @@
             }
         }
 
-        &.slick-active {
+        &.swiper-pagination-bullet-active {
             color: $primary;
 
             &:after {
@@ -156,10 +160,23 @@
             }
         }
     }
-
-    button {
-        display: none;
-    }
 }
-    
+
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 1000%;   
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+}
 </style>

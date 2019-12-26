@@ -29,10 +29,6 @@ export default {
         }
     },
 
-    mounted() {
-        document.body.classList.remove('home-page');
-    },
-
     components: {
         CaptionSection,
         CardCategory

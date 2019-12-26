@@ -47,11 +47,15 @@ export default {
 	  
 	.header {
 		padding: 63px 0 35px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 10;
+		position: static;
+
+		&.header-home {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 10;
+		}
 
 		.container {
 			display: flex;
@@ -73,7 +77,7 @@ export default {
 			margin-left: 16px;
 		}
 		
-		.home-page &{
+		.header-home &{
 			
 			color: $white;
 		}
@@ -89,7 +93,7 @@ export default {
 		font-size: 16px;
 		color: $dark-blue;
 
-		.home-page &{
+		.header-home &{
 			color: $white;
 		}
 

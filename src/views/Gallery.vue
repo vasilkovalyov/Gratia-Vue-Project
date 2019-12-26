@@ -21,10 +21,6 @@ export default {
 
     components: {
         CaptionSection
-    },
-
-    mounted() {
-        document.body.classList.remove('home-page');
     }
 }
 

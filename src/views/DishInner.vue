@@ -27,7 +27,6 @@ export default {
     mounted() {
         const routeObject = this.$route.params
         this.chooseProductCategoryById({category: routeObject.categoryName, id: routeObject.id});
-        document.body.classList.remove('home-page');
     },
 
     methods: {

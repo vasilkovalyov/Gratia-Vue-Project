@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="wrapper">
-	<Header></Header>
+	<Header :class="{'header-home': this.$route.path === '/'}"></Header>
 	<main class="main" id='main'>
     	<router-view></router-view>
 	</main>

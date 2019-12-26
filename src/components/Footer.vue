@@ -23,8 +23,9 @@
 export default {
   	data() {
 		return {
-            copyright: 'Copyright 2016. All rights reserved by symu',
+            copyright: `Copyright 2019. All rights reserved by symu`,
             captionFooter: 'Gratia Restaurant',
+            currentYear: null,
             socialList: [
                 {
                     icon: 'icon-facebook',
@@ -40,7 +41,7 @@ export default {
                 }
             ]
 		}
-  	}
+    }
 }
 </script>
 
@@ -49,6 +50,7 @@ export default {
 
     #footer {
         background: $base-background-footer;
+        padding: 30px 0;
     }
 
     .footer {

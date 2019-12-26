@@ -1,7 +1,7 @@
 <template>
 	<section class="section-dishes">
 		<div class="container">
-            <button class="btn-back" @click="goBackToCategories">&#8592; Back to categories</button>
+            <button class="btn-back" @click="goBackToCategories">&#8592; Back to menu</button>
             <div class="caption-holder">
 			    <h1>{{getSelectedCategoryName}}</h1>
             </div>
@@ -34,7 +34,6 @@ export default {
     },
     
     mounted() {
-        document.body.classList.remove('home-page');
         this.chooseCategory(this.$route.params.category);
     },
 
