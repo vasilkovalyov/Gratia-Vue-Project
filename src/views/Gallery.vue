@@ -23,10 +23,6 @@ export default {
         }
     },
 
-    created() {
-        console.log(this.getGalleryImages);
-    },
-
     components: {
         CaptionSection,
         GalleryImages

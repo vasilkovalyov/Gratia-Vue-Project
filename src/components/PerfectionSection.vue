@@ -1,7 +1,7 @@
 <template>
   <section class="perfection-section">
       <div class="container">
-        <CaptionSection v-bind=captionSectionObj></CaptionSection>
+        <CaptionSection v-bind="captionSectionObj"></CaptionSection>
       </div>
   </section>
 </template>

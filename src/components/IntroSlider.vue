@@ -9,7 +9,7 @@
                 </div>
             </swiper-slide>
         </swiper>
-        <ul class="swiper-pagination"  slot="pagination"></ul>
+        <ul class="swiper-pagination intro-slider-pagination"  slot="pagination"></ul>
         <div class="arrow-swiper arrow-swiper-prev" slot="button-prev"></div>
         <div class="arrow-swiper arrow-swiper-next" slot="button-next"></div>
     </div>
@@ -103,7 +103,7 @@
     }
 }
 
-.swiper-pagination {
+.intro-slider-pagination {
     position: absolute;
     left: -65px;
     bottom: -70px;
