@@ -13,9 +13,17 @@
             <div v-else>
                 <div class="dishes-list">
                     <div class="row">
-                        <div class="col" v-for="(card,key) in getSelectedCategoryProducts" :key="key">
+                        <div class="col" v-for="(card,key) in getSlicedArray(currentPage)" :key="key">
                             <CardDish :card="card"></CardDish>
                         </div>
+                    </div>
+                    <div v-if="isEmpty > countProductOnPage">
+                        <Pagination 
+                            :countProductOnPage="countProductOnPage" 
+                            :productLength="getSelectedCategoryProducts.length"
+                            :products="getSelectedCategoryProducts"
+                            @getCurrentPage="getCurrentPage"
+                        ></Pagination>
                     </div>
                 </div>
             </div>
@@ -26,18 +34,20 @@
 
 import CaptionSection from '@/components/CaptionSection'
 import CardDish from '@/components/Menu/CardDish'
+import Pagination from '@/components/Pagination'
 
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
     data() {
         return {
-            category: this.$router.currentRoute.params.category,
             sorryMsg: 'Sorry, category is empty',
             captionSectionObj: {
                 'captionSection': 'Category Inner Page',
                 'subcaptionText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-            }
+            },
+            currentPage: 1,
+            countProductOnPage: 6,
         }
     },
     
@@ -47,13 +57,26 @@ export default {
 
     components: {
         CaptionSection,
-        CardDish
+        CardDish,
+        Pagination
     },
 
     methods: {
         ...mapActions(["chooseCategory"]),
+
         goBackToCategories() {
             this.$router.push('/menu');
+        },
+      
+        getSlicedArray(currentPage) {
+            let startIndex = (this.countProductOnPage * (currentPage - 1)) + --currentPage;
+            let endIndex = (this.countProductOnPage * (currentPage + 1)) + currentPage++;
+
+            return this.getSelectedCategoryProducts.slice(startIndex, endIndex);
+        },
+
+        getCurrentPage(data) {
+            this.currentPage = data;
         }
     },
 
@@ -121,6 +144,55 @@ export default {
                 width: 33.33%;
                 padding: 0 30px;
             }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        .page-item {
+            margin: 0 8px;
+        }
+
+        .page-link {
+            @include animate(background-color color);
+
+            background: $base-text-color;
+            border: 0;
+            outline: none;
+            padding: 5px 10px;
+            border-radius: 2px;
+            color: $white;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $primary;
+                color: $white;
+            }
+
+            &.pagination-link--disable {
+                &:hover {
+                    cursor: default;
+                    background: $base-text-color;
+                    color: $white;
+                }
+            }
+
+            &.pagination-link--active {
+                &:hover {
+                    cursor: default;
+                }
+            }
+        }
+
+        .pagination-link--active {
+            background-color: $primary;
+            color: $white;
         }
     }
 </style>

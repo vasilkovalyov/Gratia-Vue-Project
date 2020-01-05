@@ -79,7 +79,8 @@ export default {
                             categoryName: 'soups',
                             description: 'Mushrooms and potatoes with crackers and herbs',
                             cost: 7
-                        }
+                        },
+
                     ]
                 }
             },
@@ -91,7 +92,82 @@ export default {
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 products: {
                     categoryName: 'hamburgers',
-                    categoryProducts: []
+                    categoryProducts: [
+                        {
+                            id: 1,
+                            image: 'img-32.jpg',
+                            caption: 'NEW YORK',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 12.5 
+                        },
+                        
+                        {
+                            id: 2,
+                            image: 'img-33.jpg',
+                            caption: 'BBQ BURGER',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 9
+                        },
+                        {
+                            id: 3,
+                            image: 'img-34.jpg',
+                            caption: 'U.S BURGER',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 5.50 
+                        },
+                        {
+                            id: 4,
+                            image: 'img-35.jpg',
+                            caption: 'BLT BURGER',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 14 
+                        },
+                        {
+                            id: 5,
+                            image: 'img-36.jpg',
+                            caption: 'MELTED CHEESE BURGER',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 7.50 
+                        },
+                        {
+                            id: 6,
+                            image: 'img-37.jpg',
+                            caption: 'CHICKEN BURGER',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 10 
+                        },
+                        {
+                            id: 7,
+                            image: 'img-38.jpg',
+                            caption: 'MEET&MEAT',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 12 
+                        },
+                        {
+                            id: 8,
+                            image: 'img-39.jpg',
+                            caption: 'BEEF BURGER',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 8.50 
+                        },
+                        
+                        {
+                            id: 9,
+                            image: 'img-40.jpg',
+                            caption: 'SUPER CHEESE',
+                            categoryName: 'hamburgers',
+                            description: '',
+                            cost: 8 
+                        }
+                    ]
                 }
             },
             {
@@ -142,6 +218,38 @@ export default {
                             categoryName: 'desserts',
                             description: 'Pears, grapes, oranges, apples, pineapple, kiwi, berries',
                             cost: 4
+                        },
+                        {
+                            id: 6,
+                            image: 'img-58.jpg',
+                            caption: 'Ice cream',
+                            categoryName: 'desserts',
+                            description: '',
+                            cost: 5
+                        },
+                        {
+                            id: 7,
+                            image: 'img-59.jpg',
+                            caption: 'Pancake',
+                            categoryName: 'desserts',
+                            description: '',
+                            cost: 7
+                        },
+                        {
+                            id: 8,
+                            image: 'img-60.jpg',
+                            caption: 'Topped pancakes',
+                            categoryName: 'desserts',
+                            description: '',
+                            cost: 6.5
+                        },
+                        {
+                            id: 9,
+                            image: 'img-61.jpg',
+                            caption: 'Cheesecake',
+                            categoryName: 'desserts',
+                            description: '',
+                            cost: 8
                         }
                     ]
                 }
@@ -154,7 +262,144 @@ export default {
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 products: {
                     categoryName: 'barbecue',
-                    categoryProducts: []
+                    categoryProducts: [
+                        {
+                            id: 1,
+                            image: 'img-41.jpg',
+                            caption: 'Beef steak',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        },
+                        {
+                            id: 2,
+                            image: 'img-42.jpg',
+                            caption: 'Rack of pork ribs',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 10
+                        },
+                        {
+                            id: 3,
+                            image: 'img-43.jpg',
+                            caption: 'Chicken wings',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 14
+                        },
+                        {
+                            id: 4,
+                            image: 'img-44.jpg',
+                            caption: 'Pork on the bone',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 8
+                        },
+                        {
+                            id: 5,
+                            image: 'img-45.jpg',
+                            caption: 'Chicken steak',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 7.5
+                        },
+                        {
+                            id: 6,
+                            image: 'img-46.jpg',
+                            caption: 'Beef skewers',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 9
+                        },
+                        {
+                            id: 7,
+                            image: 'img-47.jpg',
+                            caption: 'Pork skewers',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 4.5
+                        },
+                        {
+                            id: 8,
+                            image: 'img-48.jpg',
+                            caption: 'Chicken Skewers',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 8.5
+                        },
+                        {
+                            id: 9,
+                            image: 'img-49.jpg',
+                            caption: 'Barbecue sausages',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 10
+                        },
+                        {
+                            id: 10,
+                            image: 'img-50.jpg',
+                            caption: 'BBQ champignons',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        },
+                        {
+                            id: 11,
+                            image: 'img-51.jpg',
+                            caption: 'BBQ vegetables',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 7
+                        },
+                        {
+                            id: 12,
+                            image: 'img-52.jpg',
+                            caption: 'Barbecue corn',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 15
+                        },
+                        {
+                            id: 13,
+                            image: 'img-53.jpg',
+                            caption: 'Pork locket',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        },
+                        {
+                            id: 14,
+                            image: 'img-54.jpg',
+                            caption: 'Bacon Chicken Fillet',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        },
+                        {
+                            id: 15,
+                            image: 'img-55.jpg',
+                            caption: 'Rack of lamb barbecue',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        },
+                        {
+                            id: 16,
+                            image: 'img-56.jpg',
+                            caption: 'Salmon steak',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        },
+                        {
+                            id: 17,
+                            image: 'img-57.jpg',
+                            caption: 'Mackerel',
+                            categoryName: 'barbecue',
+                            description: '',
+                            cost: 12
+                        }
+                    ]
                 }
             },
             {
