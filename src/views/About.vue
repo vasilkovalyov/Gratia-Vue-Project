@@ -28,7 +28,7 @@ export default {
     components: {
         CaptionSection,
         OurTeam,
-	}
+    }
 }
 
 </script>

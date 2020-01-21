@@ -2,6 +2,7 @@
 	<section class="section-menu">
 		<div class="container">
 			<CaptionSection v-bind=captionSectionObj></CaptionSection>
+            <SearchDishes></SearchDishes>
             <div class="menu-card-category-list">
                 <div class="row">
                     <div class="col" v-for="(card,key) in getCategoryList" :key="key">
@@ -16,6 +17,7 @@
 
 import CaptionSection from '@/components/CaptionSection'
 import CardCategory from '@/components/Menu/CardCategory'
+import SearchDishes from '@/components/SearchDishes'
 
 import { mapGetters } from 'vuex';
 
@@ -31,7 +33,8 @@ export default {
 
     components: {
         CaptionSection,
-        CardCategory
+        CardCategory,
+        SearchDishes
     },
 
     computed: {
@@ -43,10 +46,17 @@ export default {
 <style lang="scss">
     @import "@/assets/scss/style.scss";
 
-    .caption-section {
-        margin-bottom: 87px;
+    .menu-page {
+        .caption-section {
+            margin-bottom: 0;
+            padding-bottom: 20px;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
     }
-    
+  
     .menu-card-category-list {
         .row {
             @include media(">=phone") {

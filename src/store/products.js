@@ -609,9 +609,15 @@ export default {
             return arrayImages;
         },
 
+        getAllProducts(state) {
+            return state.categoryList.map((item) => item.products.categoryProducts).reduce((prev, target) => prev.concat(target));
+        },
+
         getOurTeam(state) {
             return state.ourTeam;
-        }
+        },
+
+        
     }    
 }
   
