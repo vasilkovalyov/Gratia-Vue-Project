@@ -36,9 +36,13 @@ export default {
 
     .our-team-person {
         position: relative;
-        max-width: 300px;
-        width: 100%;
-        margin: 0 auto;
+        text-align: center;
+
+        @include media(">=desktop") {
+            max-width: 300px;
+            width: 100%;
+            margin: 0 auto;
+        }
 
         &:hover {
             .image-holder {
@@ -70,14 +74,19 @@ export default {
         }
 
         .image-holder {
+            display: inline-block;
             position: relative;
-            max-width: 300px;
-            width: 100%;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             background-size: cover;
             background-position: center;
             border-radius: 50%;
             overflow: hidden;
+
+            @include media(">=desktop") {
+                width: 300px;
+                height: 300px;
+            }
 
             &:before {
                 content: '';

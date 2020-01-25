@@ -32,25 +32,50 @@
 <style lang="scss">
     @import "@/assets/scss/style.scss";
 
-    $gap-border: 40px;
+
+    $gap-border-mobile: 20px;
+    $gap-border-desktop: 40px;
 
     .details-section {
-        min-height: 700px;
-        padding: 133px 0;
+        
+        padding: 20px 0;
+
+        @include media(">=tablet") {
+            padding: 40px 0;
+        }
+
+        @include media(">=desktop") {
+            padding: 133px 0;
+            min-height: 700px;
+        }
 
         h2 {
             color: $dark-blue;
             text-transform: uppercase;
-            font-size: 48px;
-            margin-bottom: 31px;
+            margin-bottom: 15px;
+
+            @include media(">=tablet") {
+                font-size: 36px;
+            }
+
+            @include media(">=desktop") {
+                font-size: 48px;
+                margin-bottom: 31px;
+            }
         }
 
         .text {
-            margin-bottom: 45px;
+            @include media(">=desktop") {
+                margin-bottom: 45px;
+            }
         }
 
         p {
-            font-size: 24px;
+            font-size: 18px;
+
+            @include media(">=desktop") {
+                font-size: 24px;
+            }
         }
     }
 
@@ -61,24 +86,43 @@
         width: 100%;
         margin: 0 auto;
         text-align: center;
-        padding: $gap-border;
+        padding: $gap-border-mobile;
+
+        @include media(">=desktop") {
+            padding: $gap-border-desktop;
+        }
 
         .holder {
-            padding: 48px 0 61px 0;
+            
             position: relative;
             z-index: 1;
+            padding: 15px 0;
+
+            @include media(">=tablet") {
+                padding: 30px 0;
+            }
+
+            @include media(">=desktop") {
+                padding: 48px 0 61px 0;
+            }
         }
 
         &:after {
             content: '';
             border: 1px solid $gray-100;
             position: absolute;
-            top: $gap-border;
-            left: $gap-border;
-            right: $gap-border;
-            bottom: $gap-border;
+            top: $gap-border-mobile;
+            left: $gap-border-mobile;
+            right: $gap-border-mobile;
+            bottom: $gap-border-mobile;
             z-index: 0;
-            
+
+            @include media(">=desktop") {
+                top: $gap-border-desktop;
+                left: $gap-border-desktop;
+                right: $gap-border-desktop;
+                bottom: $gap-border-desktop;
+            }
         }
     }
     

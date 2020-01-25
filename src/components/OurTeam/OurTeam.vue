@@ -30,6 +30,11 @@ export default {
                 uniqueNavElements: true,
                 slidesPerView: 3,
                 loop: true,
+                breakpoints: {
+                    720: {
+                        slidesPerView: 1
+                    },        
+                },
                 pagination: {
                     el: '.swiper-pagination',
                     type: 'bullets',

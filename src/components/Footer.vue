@@ -59,14 +59,20 @@ export default {
         .logo-footer {
             position: relative;
             background-color: $white;
-            margin: 0 auto 10px;
-            width: 130px;
-            height: 130px;
+            margin: 0 auto 30px;
+            width: 90px;
+            height: 90px;
             border: 1px solid $gray-300;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include media(">=desktop") {
+                width: 130px;
+                height: 130px;
+                margin: 0 auto 10px;
+            }
 
             &:before,
             &:after {
@@ -80,20 +86,33 @@ export default {
 
             &:before {
                 left: -1000%;
-                right: 130px;
+                right: 90px;
+
+                @include media(">=desktop") {
+                    right: 130px;
+                }
             }
 
             &:after {
                 right: -1000%;
-                left: 130px;
+                left: 90px;
+
+                @include media(">=desktop") {
+                    left: 130px;
+                }
             }
         }
 
         .image-holder {
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             overflow: hidden;
+
+            @include media(">=desktop") {
+                width: 80px;
+                height: 80px;
+            }
         }
 
         .page-footer-caption {
@@ -107,18 +126,26 @@ export default {
 
         .copyright {
             display: block;
-            margin-bottom: 64px;
             position: relative;
+            margin-bottom: 20px;
+
+            @include media(">=desktop") {
+                margin-bottom: 64px;
+            }
 
             &:after {
                 content: '';
                 position: absolute;
-                bottom: -35px;
+                bottom: -10px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 100px;
                 height: 1px;
                 background-color: $gray-400;
+
+                @include media(">=desktop") {
+                    bottom: -35px;
+                }
             }
         }
     }

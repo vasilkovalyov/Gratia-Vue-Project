@@ -54,7 +54,11 @@ export default {
         .container {
             > .caption-holder {
                 text-align: center;
-                margin-bottom: 60px;
+                margin-bottom: 20px;
+                
+                @include media(">=tablet") {
+                    margin-bottom: 60px;
+                }
             }
         }
 
@@ -80,9 +84,12 @@ export default {
         .image-holder {
             background-position: center;
             background-size: cover;
+            padding-top: 70%;
+            margin-bottom: 20px;
 
             @include media(">=tablet") {
                 width: 50%;
+                margin-bottom: 0;
             }
         }
 

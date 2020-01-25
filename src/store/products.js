@@ -13,7 +13,7 @@ export default {
                     categoryName: 'main-dishes',
                     categoryProducts: [
                         {
-                            id: 1,
+                            id: 1001,
                             image: 'img-27.jpg',
                             caption: 'Crispy Pork Shank',
                             categoryName: 'main-dishes',
@@ -21,7 +21,7 @@ export default {
                             cost: 6
                         },
                         {
-                            id: 2,
+                            id: 1002,
                             image: 'img-28.jpg',
                             caption: 'Baked barbecue pork ribs',
                             categoryName: 'main-dishes',
@@ -29,7 +29,7 @@ export default {
                             cost: 3
                         },
                         {
-                            id: 3,
+                            id: 1003,
                             image: 'img-29.jpg',
                             caption: 'Viennese pork schnitzel on bone',
                             categoryName: 'main-dishes',
@@ -49,7 +49,7 @@ export default {
                     categoryName: 'soups',
                     categoryProducts: [
                         {
-                            id: 1,
+                            id: 2001,
                             image: 'img-12.jpg',
                             caption: 'Hungarian goulash soup',
                             categoryName: 'soups',
@@ -57,7 +57,7 @@ export default {
                             cost: 4
                         },
                         {
-                            id: 2,
+                            id: 2002,
                             image: 'img-13.jpg',
                             caption: 'Pea soup',
                             categoryName: 'soups',
@@ -65,7 +65,7 @@ export default {
                             cost: 6
                         },
                         {
-                            id: 3,
+                            id: 2003,
                             image: 'img-14.jpg',
                             caption: 'Borsch with beef',
                             categoryName: 'soups',
@@ -73,7 +73,7 @@ export default {
                             cost: 10
                         },
                         {
-                            id: 4,
+                            id: 2004,
                             image: 'img-15.jpg',
                             caption: 'Mushroom Soup',
                             categoryName: 'soups',
@@ -94,7 +94,7 @@ export default {
                     categoryName: 'hamburgers',
                     categoryProducts: [
                         {
-                            id: 1,
+                            id: 3001,
                             image: 'img-32.jpg',
                             caption: 'NEW YORK',
                             categoryName: 'hamburgers',
@@ -103,7 +103,7 @@ export default {
                         },
                         
                         {
-                            id: 2,
+                            id: 3002,
                             image: 'img-33.jpg',
                             caption: 'BBQ BURGER',
                             categoryName: 'hamburgers',
@@ -111,7 +111,7 @@ export default {
                             cost: 9
                         },
                         {
-                            id: 3,
+                            id: 3003,
                             image: 'img-34.jpg',
                             caption: 'U.S BURGER',
                             categoryName: 'hamburgers',
@@ -119,7 +119,7 @@ export default {
                             cost: 5.50 
                         },
                         {
-                            id: 4,
+                            id: 3004,
                             image: 'img-35.jpg',
                             caption: 'BLT BURGER',
                             categoryName: 'hamburgers',
@@ -127,7 +127,7 @@ export default {
                             cost: 14 
                         },
                         {
-                            id: 5,
+                            id: 3005,
                             image: 'img-36.jpg',
                             caption: 'MELTED CHEESE BURGER',
                             categoryName: 'hamburgers',
@@ -135,7 +135,7 @@ export default {
                             cost: 7.50 
                         },
                         {
-                            id: 6,
+                            id: 3006,
                             image: 'img-37.jpg',
                             caption: 'CHICKEN BURGER',
                             categoryName: 'hamburgers',
@@ -143,7 +143,7 @@ export default {
                             cost: 10 
                         },
                         {
-                            id: 7,
+                            id: 3007,
                             image: 'img-38.jpg',
                             caption: 'MEET&MEAT',
                             categoryName: 'hamburgers',
@@ -151,7 +151,7 @@ export default {
                             cost: 12 
                         },
                         {
-                            id: 8,
+                            id: 3008,
                             image: 'img-39.jpg',
                             caption: 'BEEF BURGER',
                             categoryName: 'hamburgers',
@@ -160,7 +160,7 @@ export default {
                         },
                         
                         {
-                            id: 9,
+                            id: 3009,
                             image: 'img-40.jpg',
                             caption: 'SUPER CHEESE',
                             categoryName: 'hamburgers',
@@ -180,7 +180,7 @@ export default {
                     categoryName: 'desserts',
                     categoryProducts: [
                         {
-                            id: 1,
+                            id: 4001,
                             image: 'img-16.jpg',
                             caption: 'Napoleon',
                             categoryName: 'desserts',
@@ -188,7 +188,7 @@ export default {
                             cost: 10
                         },
                         {
-                            id: 2,
+                            id: 4002,
                             image: 'img-17.jpg',
                             caption: 'Chocolate Fondant',
                             categoryName: 'desserts',
@@ -196,7 +196,7 @@ export default {
                             cost: 9
                         },
                         {
-                            id: 3,
+                            id: 4003,
                             image: 'img-18.jpg',
                             caption: 'Meringues and profiteroles with creamy caramel sauce',
                             categoryName: 'desserts',
@@ -204,7 +204,7 @@ export default {
                             cost: 5
                         },
                         {
-                            id: 4,
+                            id: 4004,
                             image: 'img-19.jpg',
                             caption: 'Lingonberry cake',
                             categoryName: 'desserts',
@@ -212,7 +212,7 @@ export default {
                             cost: 11
                         },
                         {
-                            id: 5,
+                            id: 4005,
                             image: 'img-20.jpg',
                             caption: 'Fruit vase',
                             categoryName: 'desserts',
@@ -220,7 +220,7 @@ export default {
                             cost: 4
                         },
                         {
-                            id: 6,
+                            id: 4006,
                             image: 'img-58.jpg',
                             caption: 'Ice cream',
                             categoryName: 'desserts',
@@ -228,7 +228,7 @@ export default {
                             cost: 5
                         },
                         {
-                            id: 7,
+                            id: 4007,
                             image: 'img-59.jpg',
                             caption: 'Pancake',
                             categoryName: 'desserts',
@@ -236,7 +236,7 @@ export default {
                             cost: 7
                         },
                         {
-                            id: 8,
+                            id: 4008,
                             image: 'img-60.jpg',
                             caption: 'Topped pancakes',
                             categoryName: 'desserts',
@@ -244,7 +244,7 @@ export default {
                             cost: 6.5
                         },
                         {
-                            id: 9,
+                            id: 4009,
                             image: 'img-61.jpg',
                             caption: 'Cheesecake',
                             categoryName: 'desserts',
@@ -264,7 +264,7 @@ export default {
                     categoryName: 'barbecue',
                     categoryProducts: [
                         {
-                            id: 1,
+                            id: 4001,
                             image: 'img-41.jpg',
                             caption: 'Beef steak',
                             categoryName: 'barbecue',
@@ -272,7 +272,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 2,
+                            id: 4002,
                             image: 'img-42.jpg',
                             caption: 'Rack of pork ribs',
                             categoryName: 'barbecue',
@@ -280,7 +280,7 @@ export default {
                             cost: 10
                         },
                         {
-                            id: 3,
+                            id: 4003,
                             image: 'img-43.jpg',
                             caption: 'Chicken wings',
                             categoryName: 'barbecue',
@@ -288,7 +288,7 @@ export default {
                             cost: 14
                         },
                         {
-                            id: 4,
+                            id: 4004,
                             image: 'img-44.jpg',
                             caption: 'Pork on the bone',
                             categoryName: 'barbecue',
@@ -296,7 +296,7 @@ export default {
                             cost: 8
                         },
                         {
-                            id: 5,
+                            id: 4005,
                             image: 'img-45.jpg',
                             caption: 'Chicken steak',
                             categoryName: 'barbecue',
@@ -304,7 +304,7 @@ export default {
                             cost: 7.5
                         },
                         {
-                            id: 6,
+                            id: 4006,
                             image: 'img-46.jpg',
                             caption: 'Beef skewers',
                             categoryName: 'barbecue',
@@ -312,7 +312,7 @@ export default {
                             cost: 9
                         },
                         {
-                            id: 7,
+                            id: 5007,
                             image: 'img-47.jpg',
                             caption: 'Pork skewers',
                             categoryName: 'barbecue',
@@ -320,7 +320,7 @@ export default {
                             cost: 4.5
                         },
                         {
-                            id: 8,
+                            id: 5008,
                             image: 'img-48.jpg',
                             caption: 'Chicken Skewers',
                             categoryName: 'barbecue',
@@ -328,7 +328,7 @@ export default {
                             cost: 8.5
                         },
                         {
-                            id: 9,
+                            id: 5009,
                             image: 'img-49.jpg',
                             caption: 'Barbecue sausages',
                             categoryName: 'barbecue',
@@ -336,7 +336,7 @@ export default {
                             cost: 10
                         },
                         {
-                            id: 10,
+                            id: 5010,
                             image: 'img-50.jpg',
                             caption: 'BBQ champignons',
                             categoryName: 'barbecue',
@@ -344,7 +344,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 11,
+                            id: 5011,
                             image: 'img-51.jpg',
                             caption: 'BBQ vegetables',
                             categoryName: 'barbecue',
@@ -352,7 +352,7 @@ export default {
                             cost: 7
                         },
                         {
-                            id: 12,
+                            id: 5012,
                             image: 'img-52.jpg',
                             caption: 'Barbecue corn',
                             categoryName: 'barbecue',
@@ -360,7 +360,7 @@ export default {
                             cost: 15
                         },
                         {
-                            id: 13,
+                            id: 5013,
                             image: 'img-53.jpg',
                             caption: 'Pork locket',
                             categoryName: 'barbecue',
@@ -368,7 +368,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 14,
+                            id: 5014,
                             image: 'img-54.jpg',
                             caption: 'Bacon Chicken Fillet',
                             categoryName: 'barbecue',
@@ -376,7 +376,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 15,
+                            id: 5015,
                             image: 'img-55.jpg',
                             caption: 'Rack of lamb barbecue',
                             categoryName: 'barbecue',
@@ -384,7 +384,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 16,
+                            id: 5016,
                             image: 'img-56.jpg',
                             caption: 'Salmon steak',
                             categoryName: 'barbecue',
@@ -392,7 +392,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 17,
+                            id: 5017,
                             image: 'img-57.jpg',
                             caption: 'Mackerel',
                             categoryName: 'barbecue',
@@ -412,7 +412,7 @@ export default {
                     categoryName: 'salads',
                     categoryProducts: [
                         {
-                            id: 1,
+                            id: 6001,
                             image: 'img-21.jpg',
                             caption: 'Salted puff salad with salted salmon',
                             categoryName: 'salads',
@@ -420,7 +420,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 2,
+                            id: 6002,
                             image: 'img-22.jpg',
                             caption: 'Grilled prawns with fresh salad and vegetables',
                             categoryName: 'salads',
@@ -428,7 +428,7 @@ export default {
                             cost: 7
                         },
                         {
-                            id: 3,
+                            id: 6003,
                             image: 'img-23.jpg',
                             caption: 'Grilled Adyghe cheese salad',
                             categoryName: 'salads',
@@ -436,7 +436,7 @@ export default {
                             cost: 9
                         },
                         {
-                            id: 4,
+                            id: 6004,
                             image: 'img-24.jpg',
                             caption: 'Caesar',
                             categoryName: 'salads',
@@ -444,7 +444,7 @@ export default {
                             cost: 6
                         },
                         {
-                            id: 5,
+                            id: 6005,
                             image: 'img-25.jpg',
                             caption: 'Greek salad',
                             categoryName: 'salads',
@@ -452,7 +452,7 @@ export default {
                             cost: 4
                         },
                         {
-                            id: 6,
+                            id: 6006,
                             image: 'img-26.jpg',
                             caption: 'Grilled vegetables salad',
                             categoryName: 'salads',

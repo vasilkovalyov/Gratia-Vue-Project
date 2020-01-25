@@ -25,8 +25,15 @@
 
     .intro-holder-section {
         background-color: $dark-blue;
-        min-height: 100vh;
-        padding-top: 140px;
+        padding-top: 80px;
+        
+        @include media(">=tablet") {
+            min-height: 100vh;
+        }
+
+        @include media(">=desktop") {
+            padding-top: 140px;
+        }
     }
     
 </style>

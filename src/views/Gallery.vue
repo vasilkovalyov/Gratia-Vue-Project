@@ -58,16 +58,27 @@ export default {
 
 </script>
 <style lang="scss">
-.gallery-images {
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -10px;
-    }
+    @import "@/assets/scss/style.scss";
+
+    .gallery-images {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
 
     .col {
         padding: 0 10px;
-        width: 25%;
+        width: 100%;
+        text-align: center;
+
+        @include media(">=phone") {
+            width: 33.33%;
+        }
+
+        @include media(">=tablet") {
+            width: 25%;
+        }
     }
 
     .image-holder {

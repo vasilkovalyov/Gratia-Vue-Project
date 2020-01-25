@@ -58,12 +58,23 @@
     border: 0;
     border-top: 1px solid $white;
     outline: none;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: 50%;
+    top: 33%;
     transform: translateY(-50%);
     z-index: 3;
+
+    @include media(">=tablet") {
+        width: 30px;
+        height: 30px;
+        top: 50%;
+    }
+
+    @include media(">=desktop") {
+        width: 50px;
+        height: 50px;
+    }
 
     &:hover {
         cursor: pointer;
@@ -72,19 +83,31 @@
     &.arrow-swiper-prev {
         border-left: 1px solid $white;
         transform: translateY(-50%) rotate(-45deg);
-        left: 0;
+        left: 10px;
+
+        @include media(">=widescreen") {
+            left: 0;
+        }
     }
 
     &.arrow-swiper-next {
         border-left: 1px solid $white;
         transform: translateY(-50%) rotate(135deg);
-        right: 0;
+        right: 10px;
+
+        @include media(">=widescreen") {
+            right: 0;
+        }
     }
 }
 
 .intro-slider {
-    padding: 0 100px;
+    padding: 20px 20px 120px;
     position: relative;
+
+    @include media(">=tablet") {
+        padding: 0 100px 100px;
+    }
 
     @include media(">=widescreen") {
         max-width: 900px;
@@ -105,8 +128,8 @@
 
 .intro-slider-pagination {
     position: absolute;
-    left: -65px;
-    bottom: -70px;
+    left: 0;
+    bottom: 25px;
     color: $white;
     font-family: $base-font-serif;
     font-style: normal;
@@ -118,6 +141,8 @@
 
     @include media(">=widescreen") {
         bottom: 0;
+        left: -65px;
+        bottom: -70px;
     }
 
     @include media(">=1440px") {
@@ -130,12 +155,17 @@
         &:after {
             content: '';
             position: absolute;
-            left: -3px;
-            bottom: -11px;
+            left: 0;
+            bottom: -5px;
             width: 0;
             height: 2px;
             background-color: $primary;
             @include animate(width);
+
+            @include media(">=widescreen") {
+                left: -3px;
+                bottom: -11px;
+            }
         }
 
         &:hover {
@@ -143,6 +173,8 @@
         }
 
         &:not(:last-child) {
+            margin-bottom: 15px;
+
             @include media(">=widescreen") {
                 margin-bottom: 20px;
             }

@@ -33,8 +33,11 @@
 .caption-section {
     position: relative;
     text-align: center;
-    padding: 50px 0;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    @include media('>=desktop') {
+        padding: 50px 0;
+        margin-bottom: 50px;
+    }
     h1 {
         text-transform: uppercase;
         color: $dark-blue-200;
@@ -44,6 +47,7 @@
     }
     p {
         font-style: italic;
+        font-size: 18px;
         @include media('>=desktop') {
             font-size: 24px;
         }
@@ -87,8 +91,12 @@
     color: $primary;
     border: 1px solid $gray-200;
     line-height: 1;
-    padding: 20px 14px;
-    font-size: 16px;
+    padding: 5px 10px;
+    font-size: 12px;
+    @include media(">=desktop") {
+        padding: 20px 14px;
+        font-size: 16px;
+    }
     &:hover {
         background-color: $dark-blue;
         color: $orange;
@@ -96,12 +104,17 @@
 }
 
 .btn-back {
+    display: block;
     background-color: transparent;
     border: 0;
     color: inherit;
     font-size: 16px;
     outline: none;
+    margin-bottom: 20px;
     @include animate(color);
+    @include media(">=tablet") {
+        margin-bottom: 10px;
+    }
     &:hover {
         color: $primary;
         cursor: pointer;

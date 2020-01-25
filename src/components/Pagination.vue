@@ -62,7 +62,11 @@ export default {
         margin: 0;
 
         .page-item {
-            margin: 0 8px;
+            margin: 0 4px;
+
+            @include media(">desktop") {
+                margin: 0 8px;
+            }
         }
 
         .page-link {

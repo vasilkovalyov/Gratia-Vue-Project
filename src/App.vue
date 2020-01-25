@@ -1,4 +1,4 @@
-<template >
+<template>
   <div id="app" class="wrapper" :class="{'menu-page': this.$route.path === '/menu'}">
 	<Header :class="{'header-home': this.$route.path === '/'}"></Header>
 	<main class="main" id='main'>
