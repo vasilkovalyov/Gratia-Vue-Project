@@ -34,6 +34,7 @@ export default {
         goBackToCategories() {
             this.$router.push({path: `/category-menu/${this.getChooseProduct.categoryName}`})
         }
+        
     },
 
     computed: {
@@ -90,6 +91,7 @@ export default {
             @include media(">=tablet") {
                 width: 50%;
                 margin-bottom: 0;
+                padding-top: 0;
             }
         }
 
@@ -122,6 +124,11 @@ export default {
             font-size: 72px;
             color: $green;
             font-weight: $bold;
+            text-align: center;
+
+            ~ p {
+                text-align: center;
+            }
         }
     }
 
