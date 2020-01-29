@@ -264,7 +264,7 @@ export default {
                     categoryName: 'barbecue',
                     categoryProducts: [
                         {
-                            id: 4001,
+                            id: 5001,
                             image: 'img-41.jpg',
                             caption: 'Beef steak',
                             categoryName: 'barbecue',
@@ -272,7 +272,7 @@ export default {
                             cost: 12
                         },
                         {
-                            id: 4002,
+                            id: 5002,
                             image: 'img-42.jpg',
                             caption: 'Rack of pork ribs',
                             categoryName: 'barbecue',
@@ -280,7 +280,7 @@ export default {
                             cost: 10
                         },
                         {
-                            id: 4003,
+                            id: 5003,
                             image: 'img-43.jpg',
                             caption: 'Chicken wings',
                             categoryName: 'barbecue',
@@ -288,7 +288,7 @@ export default {
                             cost: 14
                         },
                         {
-                            id: 4004,
+                            id: 5004,
                             image: 'img-44.jpg',
                             caption: 'Pork on the bone',
                             categoryName: 'barbecue',
@@ -296,7 +296,7 @@ export default {
                             cost: 8
                         },
                         {
-                            id: 4005,
+                            id: 5005,
                             image: 'img-45.jpg',
                             caption: 'Chicken steak',
                             categoryName: 'barbecue',
@@ -304,7 +304,7 @@ export default {
                             cost: 7.5
                         },
                         {
-                            id: 4006,
+                            id: 5006,
                             image: 'img-46.jpg',
                             caption: 'Beef skewers',
                             categoryName: 'barbecue',
@@ -610,14 +610,32 @@ export default {
         },
 
         getAllProducts(state) {
-            return state.categoryList.map((item) => item.products.categoryProducts).reduce((prev, target) => prev.concat(target));
+            return state.categoryList.map((item) => item.products.categoryProducts).reduce((prev, target) => prev.concat(','+target));
+        },
+
+        getAllProductsName(state) {
+            // console.log(state.categoryList
+            //     .map((item) => item.products.categoryProducts
+            //     .map((item) => item.categoryName)
+            //     .reduce((prev,target) => prev.concat(target))));
+            // const array = state.categoryList
+            //     .map((item) => item.products.categoryProducts)
+            //     .reduce((prev, target) => prev.concat(target))
+            //     .map((item) => item.caption)
+                // .reduce((prev, target) => prev.concat(target))
+                // .map((item) => item.caption));
+            // console.log(array)
+            // return state.categoryList.map((item) => item.products.categoryProducts);
+
+            return state.categoryList
+            .map((item) => item.products.categoryProducts)
+            .reduce((prev, target) => prev.concat(target))
+            .map((item) => item.caption);
         },
 
         getOurTeam(state) {
             return state.ourTeam;
-        },
-
-        
+        }
     }    
 }
   

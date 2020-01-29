@@ -3,24 +3,26 @@
         <div class="row">
             <div class="col-6 inputs-date">
                 <div class="row">
-                    <div class="input-group" :class="{errorInput: $v.inputDay.$error}">
-                        <input type="text" placeholder="dd" class="input-contact" v-model.trim="inputDay">
-                    </div>
-                    <div class="input-group" :class="{errorInput: $v.inputMonth.$error}">
-                        <input type="text" placeholder="mm" class="input-contact" v-model.trim="inputMonth">
-                    </div>
-                    <div class="input-group" :class="{errorInput: $v.inputYear.$error}">
-                        <input type="text" placeholder="yyyy" class="input-contact" v-model.trim="inputYear">
+                    <div class="input-group" :class="{errorInput: $v.inputDate.$error}">
+                        <DatePicker @getDatePickerInput="getDatePickerInput"></DatePicker>
                     </div>
                 </div>
             </div>
             <div class="col-6 inputs-order-menu">
                 <div class="row">
                     <div class="input-group">
-                        <input type="text" placeholder="hour" class="input-contact" v-model.trim="inputHour">
+                        <FormSelect 
+                            selectPlaceholderName="hour"
+                            :selectOptionList="hoursCountList"
+                            @getSelectedValue="getSelectedValue($event,'inputHour')">
+                        </FormSelect>
                     </div>
                     <div class="input-group">
-                        <input type="text" placeholder="number of people" class="input-contact" v-model.trim="inputNumPeople">
+                        <FormSelect 
+                            selectPlaceholderName="people"
+                            :selectOptionList="peopleCountList"
+                            @getSelectedValue="getSelectedValue($event,'inputNumPeople')">
+                        </FormSelect>
                     </div>
                 </div>
             </div>
@@ -41,7 +43,11 @@
             </div>
             <div class="col-6">
                 <div class="input-group">
-                    <input type="text" placeholder="prepare menu" class="input-contact">
+                    <FormSelect 
+                        :selectOptionList="getAllProductsName" 
+                        selectPlaceholderName="prepare menu"
+                        @getSelectedValue="getSelectedValue($event,'chooseMenu')">
+                    </FormSelect>
                 </div>
             </div>
             <div class="col">
@@ -55,36 +61,28 @@
 </template>
 <script>
     import { required, minLength, maxLength, email, between } from 'vuelidate/lib/validators'
+    import DatePicker from '@/components/FormComponents/DatePicker'
+    import FormSelect from '@/components/FormComponents/FormSelect'
+    import { mapGetters } from 'vuex';
+
     export default {
         data() {
             return {
-                inputDay: '',
-                inputMonth: '',
-                inputYear: '',
+                inputDate: '',
                 inputHour: '',
                 inputNumPeople: '',
                 inputFullName: '',
                 inputPhoneNumber: '',
                 inputEmail: '',
-                inputTextareaMsg: ''
+                inputTextareaMsg: '',
+                chooseMenu: '',
+                hoursCountList: this.getArrayOfNumbers(24),
+                peopleCountList: this.getArrayOfNumbers(100)
             }
         },
         validations: {
-            inputDay: {
-                required,
-                minLength: minLength(1)
-            },
-
-            inputMonth: {
-                required,
-                minLength: minLength(1),
-                between: between(1, 12)
-            },
-
-            inputYear: {
-                required,
-                minLength: minLength(4),
-                between: between(2020, 2021)
+            inputDate: {
+                required
             },
 
             inputHour: {
@@ -112,14 +110,47 @@
                 minLength: minLength(1)
             }
         },
+
         methods: {
+            getDatePickerInput(datePickerValue) {
+                this.inputDate = datePickerValue;
+            },
+
+            getSelectedValue(selectedValue, prop) {
+                this[prop] = selectedValue;
+            },
+
             sendContactForm() {
-                console.log(this.$v);
+                const contactObj = {
+                    inputDate: this.inputDate,
+                    inputHour: this.inputHour,
+                    inputNumPeople: this.inputNumPeople,
+                    inputFullName: this.inputFullName,
+                    inputPhoneNumber: this.inputPhoneNumber,
+                    inputEmail: this.inputEmail,
+                    inputTextareaMsg: this.inputTextareaMsg,
+                    chooseMenu: this.chooseMenu
+                };
+
+                alert('Data sent');
+            },
+
+            getArrayOfNumbers(countNumInArray) {
+                return (new Array(countNumInArray)).fill(1).map((a,i) => ++i);
             }
         },
 
+        components: {
+            DatePicker,
+            FormSelect
+        },
+
+        computed: {
+            ...mapGetters(['getAllProductsName'])
+        },
+
         mounted() {
-            console.log(this.$v)
+            
         }
     }
 </script>
@@ -146,18 +177,44 @@
         }
     }
 
-    .input-contact {
+    .input-contact,
+    .vs__dropdown-toggle {
         width: 100%;
         background-color: $white;
         border: 0;
         margin-bottom: 35px;
-        border: 1px solid;
+        border: 1px solid $black;
         height: 40px;
         text-transform: uppercase;
         font-size: 14px;
         font-weight: $bold;
         font-family: inherit;
         padding: 10px;
+        border-radius: 0;
+    }
+
+    .vs__search {
+        &:focus {
+            margin: 0;
+        }
+    }
+
+    .vs__selected {
+        margin: 0;
+    }
+
+    .vs__dropdown-toggle {
+        input {
+            font-size: 14px;
+            font-weight: $bold;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-family: $base-font-serif;
+            text-align: center;
+        }
     }
 
     .inputs-date {
